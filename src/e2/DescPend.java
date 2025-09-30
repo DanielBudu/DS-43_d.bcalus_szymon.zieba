@@ -6,10 +6,10 @@ public class DescPend {
             int treeCount = 0;
             int i = 0, j = 0; // i vertical, j horizontal
 
-            while (i < slopeMap.length) {
+            //Contar la primera posición
+            if (slopeMap[i][j] == '#') treeCount++;
 
-                //Contar la primera posición
-                if (slopeMap[i][j] == '#') treeCount++;
+            while (i < slopeMap.length) {
 
                 // Mover horizontal paso a paso
                 for (int step = 0; step < right; step++) {
