@@ -6,6 +6,8 @@ public class DescPend {
             int treeCount = 0;
             int i = 0, j = 0; // i vertical, j horizontal
 
+            CheckInvalidCharacter(slopeMap[i][j]);
+
             //Contar la primera posición
             if (slopeMap[i][j] == '#') treeCount++;
 
@@ -14,6 +16,9 @@ public class DescPend {
                 // Mover horizontal paso a paso
                 for (int step = 0; step < right; step++) {
                     j = (j + 1) % slopeMap[i].length;
+
+                    CheckInvalidCharacter(slopeMap[i][j]);
+
                     if (slopeMap[i][j] == '#') {
                         treeCount++;
                     }
@@ -24,6 +29,9 @@ public class DescPend {
                     if (i >= slopeMap.length) {
                         break;
                     }
+
+                    CheckInvalidCharacter(slopeMap[i][j]);
+
                     if (slopeMap[i][j] == '#') {
                         treeCount++;
                     }
@@ -52,6 +60,10 @@ public class DescPend {
 
             }
             return treeCount;
+        }
+
+        public static void CheckInvalidCharacter(char c) {
+            if (c != '#' && c != '.') throw new IllegalArgumentException();
         }
 
     public static void main(String[] args) {
