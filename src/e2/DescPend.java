@@ -6,7 +6,9 @@ public class DescPend {
             int treeCount = 0;
             int i = 0, j = 0; // i vertical, j horizontal
 
+            InvalidMatrix(i,j);
             CheckInvalidCharacter(slopeMap[i][j]);
+            CheckInvalidMovements(slopeMap, i, j);
 
             //Contar la primera posición
             if (slopeMap[i][j] == '#') treeCount++;
@@ -65,6 +67,21 @@ public class DescPend {
         public static void CheckInvalidCharacter(char c) {
             if (c != '#' && c != '.') throw new IllegalArgumentException();
         }
+
+    public static void CheckInvalidMovements(char[][] slopeMap, int row, int col) {
+        if (row < 0 || row >= slopeMap.length ||
+                col < 0 || col >= slopeMap[0].length) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public static void InvalidMatrix(int row, int col) {
+        if (row != col) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+
 
     public static void main(String[] args) {
         char[][] matriz = {

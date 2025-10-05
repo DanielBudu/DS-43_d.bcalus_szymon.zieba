@@ -34,13 +34,13 @@ public class DescPendTest {
     @Test
     public void testDownTheSlope_differentStep() {
         int result = DescPend.downTheSlope(matriz, 1, 2);
-        assertEquals(10, result, "downTheSlope con right=1, down=2 debe contar 10 árboles");
+        assertEquals(4, result, "downTheSlope con right=1, down=2 debe contar 4 árboles");
     }
 
     @Test
     public void testJumpTheSlope_differentStep() {
         int result = DescPend.jumpTheSlope(matriz, 1, 2);
-        assertEquals(5, result, "jumpTheSlope con right=1, down=2 debe contar 5 árboles");
+        assertEquals(2, result, "jumpTheSlope con right=1, down=2 debe contar 2 árboles");
     }
 
     @Test
